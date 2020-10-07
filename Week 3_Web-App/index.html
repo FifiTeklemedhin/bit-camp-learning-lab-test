@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <script defer src="script.js"></script>
     <head>
         <h1>Week Three Example</h1>
     </head>
@@ -7,11 +8,12 @@
         <div id="container">
             <div id="hidden-emotion" hidden ></div>
             <form id="image-form" onsubmit="handle(event)" enctype = "multipart/form-data">
-                <input type="image" onChange="loadFile(event)" accept="image" name = "image">
+                <input type="file" onChange="loadFile(event)" accept="image" name = "image">
                 <img id="output">
-                <br>
+                <hr/>
                 <button type="submit">Submit Picture</button>
             </form>
+            
             <div id="emotion"></div>
             <button id="song-button">Find Song</button>
             <div id="song-detail"></div>
