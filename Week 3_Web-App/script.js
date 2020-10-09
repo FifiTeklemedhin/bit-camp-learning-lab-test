@@ -1,3 +1,5 @@
+var div = document.createElement("div");
+    div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
 function loadFile(event)
 {
     var image = document.getElementById('image'); // gets the ID "output" and displays the image the user uploaded
@@ -8,7 +10,7 @@ function loadFile(event)
 async function handle(event) //take in the reponse and create a form that includes amount of different emotions using data from face api
 {
     console.log('submitting form...');
-    $('image').html('Loading');
+    $('output').html('Loading');
     event.preventDefault();
 
     //creating a new form with emotion data 
@@ -16,7 +18,7 @@ async function handle(event) //take in the reponse and create a form that includ
     var payload = new FormData(myform);
 
     //TODO: url for function accessing spotify API
-    const resp = await fetch('<URL>', {
+    const resp = await fetch('https://weektwo-bitcamp1.azurewebsites.net/api/Issue1?code=/MBz9E6s4Vqua7t52MSD1aigRz/kRsaU5vqwgKCEsQw6rPjlb8pxqg==', {
         method: 'POST',
         body: payload
     });
